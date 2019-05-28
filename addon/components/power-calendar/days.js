@@ -276,6 +276,9 @@ export default Component.extend({
   },
 
   _handleDayClick(e) {
+    if(this.isDestroyed){
+      return;
+    }
     let dayEl = e.target.closest('[data-date]');
     if (dayEl) {
       let dateStr = dayEl.dataset.date;
